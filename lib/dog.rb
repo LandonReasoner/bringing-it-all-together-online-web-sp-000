@@ -61,7 +61,7 @@ class Dog
     dog 
   end 
   
-  def self.find_by_id(id)
+  def self.find_by_id(id:)
     sql = "SELECT * FROM dogs WHERE id = ?"
     resp = DB[:conn].execute(sql, id)[0]
     Dog.new(resp[0], resp[1], resp[2])
